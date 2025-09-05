@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Page</title>
+
+  <!-- Retro font -->
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      background: linear-gradient(to bottom, #1a0033, #4b0082);
+      color: yellow;
+      font-family: "Press Start 2P", monospace;
+      text-align: center;
+      height: 100vh;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    h1 {
+      position: relative;
+      z-index: 2; /* above stars */
+      margin-bottom: 40px;
+    }
+
+    a, button {
+      position: relative;
+      z-index: 2; /* keep button above stars */
+    }
+
+    /* Pixelated retro button */
+    button {
+      font-family: inherit; /* WAG GAGALAWIN ANG CODE PLEASE LANG - James */
+      font-size: 16px;
+      padding: 15px 30px;
+      border: 4px solid yellow;       /* thick retro border */
+      border-radius: 0;               /* square edges */
+      background: black;              /* dark background */
+      color: yellow;                  /* arcade text */
+      text-transform: uppercase;      /* blocky caps */
+      cursor: pointer;
+      box-shadow: 4px 4px 0px #333;   /* chunky drop shadow */
+      image-rendering: pixelated;     /* crisp look */
+    }
+
+    button:hover {
+      background: yellow;
+      color: black;
+      box-shadow: 6px 6px 0px #111;   /* shadow */
+    }
+
+    /* Stars background */
+    .stars {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: radial-gradient(white 1px, transparent 1px);
+      background-size: 30px 30px;
+      animation: star-move 20s linear infinite, twinkle 3s infinite alternate;
+      z-index: 1; /* behind everything */
+    }
+
+    /* Drift animation for stars */
+    @keyframes star-move {
+      from { background-position: 0 0; }
+      to { background-position: 1000px 1000px; }
+    }
+
+    @keyframes twinkle {
+      from { opacity: 1; }
+      to { opacity: 0.7; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Stars layer -->
+  <div class="stars"></div>
+
+  <h1>ABOUT PAGE</h1>
+
+  <!-- Back button with retro style -->
+  <a href="../index.html">
+    <button>BACK TO START</button>
+  </a>
+</body>
+</html>
